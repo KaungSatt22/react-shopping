@@ -9,7 +9,7 @@ const Navbar = () => {
   const cart = useSelector(cartItem);
   return (
     <div className="bg-slate-50 sticky top-0">
-      <nav className="container mx-auto flex justify-between items-center h-[15vh] lg:h-[10vh] p-3 relative">
+      <nav className="container mx-auto flex flex-col lg:flex-row justify-between items-center h-[15vh] lg:h-[10vh] p-3 relative">
         <h2 className="text-3xl font-bold">Online Shopping</h2>
         <div className="flex items-center space-x-5">
           <NavLink

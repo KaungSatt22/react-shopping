@@ -33,7 +33,7 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          <div className="flex justify-center items-center space-x-10 my-10">
+          <div className="flex justify-center items-center space-x-5 lg:space-x-10 my-10">
             <button
               className={`border-2 py-2 px-5 rounded-lg ${
                 category === "All" ? "bg-black text-white" : ""
@@ -81,7 +81,7 @@ const Home = () => {
                     {item.title}
                   </h2>
                   <div className="flex items-center justify-between mt-5 ">
-                    <div className="flex items-center space-x-1 md:space-x-3">
+                    <div className="flex items-center space-x-3">
                       <button
                         className="px-1 py-2 text-sm lg:text-md md:p-2 bg-blue-500 rounded-lg text-white"
                         onClick={() => clickHandler(item.id)}
@@ -109,7 +109,9 @@ const Home = () => {
                       <div className="text-sm lg:text-md font-bold">
                         Price :
                       </div>
-                      <p className="text-sm lg:text-md">${item.price}</p>
+                      <p className="text-sm lg:text-md font-thin">
+                        ${item.price}
+                      </p>
                     </div>
                   </div>
                 </div>
