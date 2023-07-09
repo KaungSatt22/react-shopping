@@ -33,7 +33,7 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          <div className="flex justify-center items-center space-x-5 lg:space-x-10 my-10">
+          <div className="flex justify-center items-center space-x-2 lg:space-x-10 my-10 ">
             <button
               className={`border-2 py-2 px-5 rounded-lg ${
                 category === "All" ? "bg-black text-white" : ""
@@ -67,7 +67,7 @@ const Home = () => {
               Jewelery
             </button>
           </div>
-          <div className="p-5 grid grid-cols-fluid gap-[2rem] lg:gap-[5rem]">
+          <div className="p-5 grid grid-cols-fluid gap-[2rem] lg:gap-[5rem] ">
             {showData.map((item) => (
               <div key={item.id} className="border-2 p-5 bg-slate-50">
                 <div className="rounded-lg mb-5 border-b-2">
