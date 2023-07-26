@@ -4,7 +4,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const Loading = () => {
   let fakeArr = new Array(10).fill("loading");
-  console.log(fakeArr);
   return (
     <div className="p-5 grid grid-cols-fluid gap-[5rem]">
       {fakeArr.map((arr, i) => (
