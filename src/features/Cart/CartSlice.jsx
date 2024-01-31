@@ -12,24 +12,22 @@ const CartSlice = createSlice({
       let findItem = state.cart.find((item) => item.id === payload.id);
       if (findItem) {
         findItem.quantity++;
-        findItem.total += payload.price;
+        findItem.total = findItem.price * findItem.quantity;
       } else {
         state.cart.push(payload);
       }
     },
     reduceToCart: (state, { payload }) => {
       let findItem = state.cart.find((item) => item.id === payload.id);
-      let findIdx = state.cart.findIndex((item) => item.id === payload.id);
       if (findItem.quantity > 1) {
         findItem.quantity--;
-        findItem.total -= payload.price;
+        findItem.total = findItem.price * findItem.quantity;
       } else {
-        state.cart.splice(findIdx, 1);
+        state.cart = state.cart.filter((item) => item.id !== payload.id);
       }
     },
     removeToCart: (state, { payload }) => {
-      let findIdx = state.cart.findIndex((item) => item.id === payload.id);
-      state.cart.splice(findIdx, 1);
+      state.cart = state.cart.filter((item) => item.id !== payload.id);
     },
   },
 });

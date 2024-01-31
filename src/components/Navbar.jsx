@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   const [isShow, setIsShow] = useState(false);
   const cart = useSelector(cartItem);
+  const totalItem = cart.reduce((total, item) => total + item.quantity, 0);
   return (
     <div className="bg-slate-50 sticky top-0 p-3 ">
       <nav className="container mx-auto flex flex-col lg:flex-row justify-between items-center h-[15vh] lg:h-[10vh] p-3 relative">
@@ -25,7 +26,7 @@ const Navbar = () => {
             Cart{" "}
             {cart.length > 0 && (
               <span className=" absolute bg-red-500 px-2 rounded-full text-xl -top-5">
-                {cart.length}
+                {totalItem}
               </span>
             )}
           </button>
